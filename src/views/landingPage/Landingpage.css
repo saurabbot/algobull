@@ -1,0 +1,52 @@
+.container{
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+section{
+    height: 100vh;
+    scroll-snap-align: start;
+}
+.jumbo{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.first{
+    
+}
+.second{
+    background-color: black;
+    color: white;
+    align-items: center;
+}
+.landImg{
+    width: 700px;
+    margin-left: 150px;
+}
+.card{
+    margin-top: 100px;
+    border: 1px black;
+    text-align: center;
+    width: 350px;
+    height: 250px;
+    border-radius: 30px;
+    box-shadow: rgba(59, 98, 224, 0.712) 0px 3px 8px;
+}
+.arrowDiv{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.arrowimg{
+    width: 60px;
+    animation: rotation 1s infinite linear;
+}
+@keyframes rotation {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(55px);
+    }
+  }

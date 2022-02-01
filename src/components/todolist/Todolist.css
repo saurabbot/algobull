@@ -1,0 +1,10 @@
+.whatsup{
+    font-size: 4rem;
+    font-weight: 700;
+}
+.ndpagecont{
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
