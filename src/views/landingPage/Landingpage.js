@@ -4,6 +4,7 @@ import vector from '../../images/work.jpg'
 import arrow from '../../images/down-chevron.png'
 import Navbar from '../../components/navbar/Navbar';
 import Todolist from '../../components/todolist/Todolist';
+
 export const Landingpage = () => {
   return (
     <div className='container'>

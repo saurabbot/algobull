@@ -1,5 +1,6 @@
 .todoContainer{
     background-color: tomato;
+    margin: 3px;
     border: none;
     padding: 10px;
     border-radius: 50px;

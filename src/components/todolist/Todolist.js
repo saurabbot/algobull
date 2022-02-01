@@ -1,9 +1,13 @@
 import React,{useState} from 'react';
 import './Todolist.css';
 import Form from '../form/Form';
+import {Button} from 'antd';
 import Todo from '../todo/Todo';
+import DisplayTodos from '../display/DisplayTodos';
 const Todolist = () => {
     const[todos,setTodos] = useState([]);
+    const[showForm,setShowForm] = useState(false);
+    const click = () => setShowForm(true);
     const addTodo = todo => {
         if(!todo.title|| /^\s*$/.test(todo.title)){
             return;
@@ -25,14 +29,26 @@ const Todolist = () => {
 
     return (
         <div className='box'>
-            <h1 className='whatsup'>Whats the Plan for TodaY?</h1>
             <div className='ndpagecont'>
-                <Form onSubmit={addTodo}/>
-                <Todo 
-                todos={todos}
+                <Button style={{borderRadius: '20px',margin: '10px',width: '100px'}} 
+                onClick={() => setShowForm(!showForm)} >
+                    {!showForm ? 'Add Task' : 'Close Form'}                  
+                </Button>
+                {showForm ? <Form onSubmit={addTodo}/> : null}
+                
+                {/* <div class="todoscont">
+                    <Todo 
+                    todos={todos}
+                    removeTodo={removeTodo}
+                    editTodo={editTodo}
+                    />
+                </div> */}
+                <DisplayTodos 
                 removeTodo={removeTodo}
                 editTodo={editTodo}
+                todos={todos}
                 />
+                
             </div>
         </div>
     );

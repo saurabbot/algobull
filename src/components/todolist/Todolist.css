@@ -5,6 +5,10 @@
 .ndpagecont{
     padding: 30px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+.todoscont{
+    display: flex;
+    flex-direction: column;
 }

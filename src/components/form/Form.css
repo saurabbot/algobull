@@ -6,12 +6,14 @@
     background-color: wheat;
     width: 400px;
     height: 300px;
+    top: 20px;
     border: 1px  blue;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
     border-radius: 30px;
+    padding: relative;
 }
 textarea{
     background-color: thistle;
