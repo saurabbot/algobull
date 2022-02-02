@@ -4,6 +4,8 @@ const Form = (props) => {
     const [title, setTitle] = useState(props.edit? props.edit.title: '');
     const [desc,setDesc] = useState(props.edit? props.edit.description: '');
     const [date,setDate] = useState(props.edit? props.edit.dueDate: '');
+    const [status,setStatus] = useState(props.edit? props.edit.status: '');
+    const [tag,setTag] = useState('');
     const handleChange = e => {
         setTitle(e.target.value);
     };
@@ -13,6 +15,12 @@ const Form = (props) => {
     const datehandleChange = e => {
         setDate(e.target.value);
     };
+    const statushandleChange = e => {
+        setStatus(e.target.value);
+    }
+    const taghandleChange = e => {
+        setTag(e.target.value);
+    }
     const handleSubmit = e => {
         e.preventDefault();
 
@@ -22,11 +30,14 @@ const Form = (props) => {
         timestamp: new Date().toISOString(),
         description: desc,
         dueDate: date,
-
+        status: status,
+        tag: tag
         });
         setTitle('');
         setDesc('');
         setDate('');
+        setStatus('')
+        setTag('');
     };
 
     return (
@@ -59,7 +70,24 @@ const Form = (props) => {
                     onChange={datehandleChange}
                     className='todo-date'
                     />
-                    
+                    <select 
+                    name='status' 
+                    className='statusSelect'
+                    value={status}
+                    onChange={statushandleChange}
+                    >
+                        <option value='open'>Open</option>
+                        <option value='working'>Working</option>
+                        <option value='done'>Done</option>
+                        <option value='overdue'>Overdue</option>
+                    </select>
+                    <input 
+                    className='todo-tag'
+                    value={tag}
+                    type={Number}
+                    onChange={taghandleChange}
+                    placeholder='no of tags'
+                    />
                     <button onClick={handleSubmit} className='todo-button'>
                         Update
                     </button>
@@ -92,7 +120,24 @@ const Form = (props) => {
                     onChange={datehandleChange}
                     className='todo-date'
                     />
-                    
+                    <select 
+                    name='status' 
+                    className='statusSelect'
+                    value={status}
+                    onChange={statushandleChange}
+                    >
+                        <option value='open'>Open</option>
+                        <option value='working'>Working</option>
+                        <option value='done'>Done</option>
+                        <option value='overdue'>Overdue</option>
+                    </select>
+                    <input 
+                    className='todo-tag'
+                    value={tag}
+                    type={Number}
+                    onChange={taghandleChange}
+                    placeholder='no of tags'
+                    />
                     <button onClick={handleSubmit} className='todo-button'>
                         Add todo
                     </button>

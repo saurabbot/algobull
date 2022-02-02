@@ -50,3 +50,11 @@ input{
     text-align: center;
     width: 60%;
 }
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;       /* Remove default arrow */
+    background-color: rgb(217, 153, 223);
+    width: 60px;
+    border: none;
+ }
