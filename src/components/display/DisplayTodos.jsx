@@ -1,12 +1,12 @@
 import React,{useState} from 'react';
-import { Popconfirm, Space, Menu, Dropdown } from 'antd';
+// import { Popconfirm, Space, Menu, Dropdown } from 'antd';
 import {Button} from 'antd';
 import ProTable from '@ant-design/pro-table';
-import { DownOutlined,SearchOutlined } from '@ant-design/icons';
+import { SearchOutlined } from '@ant-design/icons';
 import { Input } from 'antd';
 import Form from '../form/Form';
 const DisplayTodos = ({todos,removeTodo,editTodo}) => {
-    const { Search } = Input;
+    // const { Search } = Input;
     const [edit,setEdit] = useState({
         id: null,
         title: '',
@@ -225,7 +225,7 @@ const DisplayTodos = ({todos,removeTodo,editTodo}) => {
         {
             dataIndex: 'key',
             key: 'key',
-            title: 'Add Task',
+            title: 'Delete Task',
             width: 20,
             render: (text, row) => (
                 <Button danger style={{width: '70px',height: '30px'}} onClick={()=> removeTodo(row.id)}>

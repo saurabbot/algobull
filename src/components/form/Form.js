@@ -1,11 +1,12 @@
-import React,{useState} from 'react';
+import React,{ useState } from 'react';
+
 import './Form.css';
 const Form = (props) => {
     const [title, setTitle] = useState(props.edit? props.edit.title: '');
     const [desc,setDesc] = useState(props.edit? props.edit.description: '');
     const [date,setDate] = useState(props.edit? props.edit.dueDate: '');
     const [status,setStatus] = useState(props.edit? props.edit.status: '');
-    const [tag,setTag] = useState('');
+    const [tag,setTag] = useState(props.edit?props.edit.tag:'');
     const handleChange = e => {
         setTitle(e.target.value);
     };
@@ -23,23 +24,20 @@ const Form = (props) => {
     }
     const handleSubmit = e => {
         e.preventDefault();
-
         props.onSubmit({
-        id: Math.floor(Math.random() * 10000),
-        title: title,
-        timestamp: new Date().toISOString(),
-        description: desc,
-        dueDate: date,
-        status: status,
-        tag: tag
+            id: Math.floor(Math.random() * 10000),
+            timestamp: new Date().toISOString(),
+            description: desc,
+            dueDate: date,
+            status: status,
+            tag: tag
         });
-        setTitle('');
-        setDesc('');
-        setDate('');
-        setStatus('')
-        setTag('');
+            setTitle('');
+            setDesc('');
+            setDate('');
+            setStatus('')
+            setTag('');
     };
-
     return (
         <>
             <form className='todo-form' onSubmit={handleSubmit}>
@@ -84,7 +82,7 @@ const Form = (props) => {
                     <input 
                     className='todo-tag'
                     value={tag}
-                    type={Number}
+                    type="number"
                     onChange={taghandleChange}
                     placeholder='no of tags'
                     />
